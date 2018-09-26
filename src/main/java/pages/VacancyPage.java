@@ -19,6 +19,8 @@ public class VacancyPage extends AbstractPage{
     public int getVacanciesAmount() {
         WebElement table = getVacanciesTable;
         List<WebElement> allVacanciesInTable = table.findElements(By.tagName("tr"));
+        allVacanciesInTable.stream()
+                .forEach(e -> System.out.println(e.getText()));
         return allVacanciesInTable.size();
     }
 
